@@ -1,0 +1,23 @@
+@import "Button.css";
+
+/* Ниже идет ваш остальной базовый код (body, .box, .status и т.д.) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #eceff1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    /* ИСПРАВЛЕНИЕ: Делаем ширину всех карточек строго одинаковой */
+    width: 420px;
+    max-width: 100%; /* Защита для узких экранов мобильных телефонов */
+    box-sizing: border-box;
+}

@@ -1,0 +1,6 @@
+/node_modules
+/.idea
+/stats.html
+/.idea
+/mock/gallery/*.json
+/mock/gallery/*.bin

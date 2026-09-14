@@ -1,0 +1,66 @@
+/* Контейнер тумблера */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+/* Скрываем стандартный чекбокс */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Фон тумблера (выключен) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 34px;
+}
+
+/* Круглый переключатель внутри */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+/* Фон тумблера (включен) */
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+/* Смещение кружка при активации */
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.mode-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2196f3;
+
+    /* ИСПРАВЛЕНИЕ: Выравниваем буквы по правому краю */
+    text-align: right;
+
+    /* ИСПРАВЛЕНИЕ: Даем фиксированную ширину с запасом под "Access Point (AP)" */
+    width: 140px;
+
+    /* Защита от сжатия флексами */
+    flex-shrink: 0;
+    box-sizing: border-box;
+}

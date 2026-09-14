@@ -1,0 +1,55 @@
+
+/* Группа строки переключателя режимов */
+.switch-group {
+    margin-bottom: 25px;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f7f8;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cfd8dc;
+}
+
+.switch-label {
+    font-weight: bold;
+    color: #455a64;
+    font-size: 14px;
+}
+
+/* Текстовый индикатор текущего режима (AP / STA) */
+.mode-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2196f3;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Экраны состояний (загрузка, ошибка, успех) */
+.status {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.loader {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.error-msg {
+    color: #d32f2f;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}

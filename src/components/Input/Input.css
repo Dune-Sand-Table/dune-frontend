@@ -1,0 +1,44 @@
+.floating-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-group input {
+    width: 100%;
+    padding: 16px 12px 6px 12px;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.floating-group input:focus {
+    border-color: #2196f3;
+}
+
+.floating-group label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #90a4ae;
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.floating-group input:focus ~ label,
+.floating-group input:not(:placeholder-shown) ~ label {
+    top: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2196f3;
+    transform: translateY(0);
+}
+
+.floating-group input:not(:placeholder-shown):not(:focus) ~ label {
+    color: #78909c;
+}

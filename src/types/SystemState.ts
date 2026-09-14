@@ -1,0 +1,14 @@
+export enum SystemState {
+    INITIALIZING = "INITIALIZING",
+    UNHOMED = "UNHOMED",
+    HOMING = "HOMING",
+    IDLE = "IDLE",
+    STARTING = "STARTING",
+    RUNNING = "RUNNING",
+    PAUSING = "PAUSING",
+    PAUSED = "PAUSED",
+    RESUMING = "RESUMING",
+    STOPPING = "STOPPING",
+    ERROR = "ERROR",
+    REBOOTING = "REBOOTING",
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <rect width="100%" height="100%" fill="#1a1a1a"/>
+
+    <g transform="translate(250, 250)">
+        <circle cx="0" cy="0" r="220" fill="none" stroke="#eeeeee" stroke-width="4" />
+        <circle cx="0" cy="0" r="200" fill="none" stroke="#767676" stroke-width="1" />
+        <path d="M 0,0
+             A 10,10 0 0,0 15,5
+             A 25,25 0 0,0 -20,-15
+             A 40,40 0 0,0 35,25
+             A 60,60 0 0,0 -50,-40
+             A 85,85 0 0,0 75,55
+             A 110,110 0 0,0 -100,-80
+             A 135,135 0 0,0 120,105"
+              fill="none"
+              stroke="#e6c687"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.85" />
+
+        <circle cx="120" cy="105" r="15" fill="#ffffff" filter="drop-shadow(0px 0px 8px rgba(255,255,255,0.6))" />
+        <circle cx="123" cy="108" r="15" fill="#000000" opacity="0.4" />
+    </g>
+
+</svg>
