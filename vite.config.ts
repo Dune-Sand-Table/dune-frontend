@@ -52,7 +52,7 @@ export default defineConfig(async ({ command, mode }) => {
 
     return {
         build: {
-            outDir: '../../../esp-freertos/sample_project/www',
+            outDir: '../dune-firmware-esp-idf/www',
         },
         plugins: command === "build" ? buildPlugins() : await runPlugins(),
         server: {
