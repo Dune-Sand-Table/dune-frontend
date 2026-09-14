@@ -66,11 +66,15 @@ export const useGalleryStore = create<GalleryStore>((
                 headers: {'X-Id': get().selectedItem.id}
             });
         },
+        loadPageItems,
         async delete() {
+            const {selectedItem, allItems} = get();
             await fetch(API.GALLERY_DELETE, {
                 method: "POST",
-                headers: {'X-Id': get().selectedItem.id}
+                headers: {'X-Id': selectedItem.id}
             });
+            set({selectedItem: null, allItems: allItems.filter(x => x.id !== selectedItem.id)});
+            await loadPageItems()
         }
     }
 });

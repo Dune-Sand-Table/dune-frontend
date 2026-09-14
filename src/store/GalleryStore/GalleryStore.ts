@@ -19,4 +19,5 @@ export interface GalleryStore {
     select(id: string);
     load();
     delete();
+    loadPageItems()
 }

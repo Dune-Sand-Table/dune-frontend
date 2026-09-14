@@ -22,6 +22,8 @@ export function GalleryListView() {
     const systemState = useMonitorStore(x => x.systemState);
     const load = useGalleryStore(x => x.load)
     const del = useGalleryStore(x => x.delete)
+
+    const deleteDisabled = !selectedItem || loadedItemId === selectedItem?.id
     const loadDisabled = !selectedItem || loadedItemId === selectedItem?.id || !validStatesToLoad.includes(systemState);
     return (
         <PageWrapper title={"Gallery"}>
@@ -36,7 +38,7 @@ export function GalleryListView() {
             </div>
             <div style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                 <button onClick={() => changePage(-1)} disabled={!hasPrev}>{"<<"}</button>
-                <button onClick={del} disabled={!selectedItem}>DELETE</button>
+                <button onClick={del} disabled={deleteDisabled}>DELETE</button>
                 <button onClick={load} disabled={loadDisabled}>LOAD</button>
                 <button onClick={() => changePage(+1)} disabled={!hasNext}>{">>"}</button>
             </div>

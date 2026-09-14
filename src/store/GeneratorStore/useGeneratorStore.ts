@@ -2,6 +2,7 @@ import {create} from 'zustand';
 import {GeneratorStore} from "./GeneratorStore";
 import {API} from "../../types/API";
 import {polarToCartesian} from "../../utils/MathUtils";
+import {useGalleryStore} from "../GalleryStore/useGalleryStore";
 
 const RANDOM_FORMULAS = [
     'Math.sin(2 * a)',
@@ -86,13 +87,14 @@ export const useGeneratorStore = create<GeneratorStore>((set, get) => ({
             headers: {'Content-Type': 'application/octet-stream'}
         })).json();
 
+        const metaData = {
+            id: uploadResponse.id,
+            name: "example",
+            points: pointsPolar.length
+        };
         const metaDataResponse = await fetch(API.GALLERY_METADATA, {
             method: "POST",
-            body: JSON.stringify({
-                id: uploadResponse.id,
-                name: "example",
-                points: pointsPolar.length
-            }),
+            body: JSON.stringify(metaData),
             headers: {'Content-Type': 'application/json', 'X-Id': uploadResponse.id}
         });
 
@@ -102,6 +104,13 @@ export const useGeneratorStore = create<GeneratorStore>((set, get) => ({
             status: ok ? 'Success! Pattern sent to ESP32' : 'Failed to upload coordinates',
             isError: !ok
         });
+
+        let allItems = useGalleryStore.getState().allItems;
+
+        useGalleryStore.setState({
+            allItems: [...allItems, metaData]
+        });
+        useGalleryStore.getState().loadPageItems()
     }
 }));
 
